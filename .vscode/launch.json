@@ -8,8 +8,8 @@
                         "type": "node",
                         "request": "launch",
                         "name": "Compile and run std C program",
-                        "program": ""
-
+                        "program": "/usr/share/gdb"
+                        
                 }
         ]
         
