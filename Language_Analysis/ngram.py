@@ -1,6 +1,6 @@
 from collections import Counter
 
-def bigram_counter(input_string: str,n_gram: int)->Counter:
+def ngram_counter(input_string: str,n_gram: int)->Counter:
     window = []
     counter = Counter()
     words = input_string.split()
@@ -11,5 +11,16 @@ def bigram_counter(input_string: str,n_gram: int)->Counter:
             window.pop(0)
     return counter
 
-sentence = "hello world tom"
-print(bigram_frequency(sentence,2))
+def ngram_successor_map(sentence:str, n_gram:int)->dict:
+    window = []
+    map = {}
+    words = input_string.split()
+    for word in words:
+        window.append(word)
+        if(len(window) >= n_gram):
+            if(window[0] not in map):
+                dict[window[0]] = [tuple(window[1:])]
+            else:
+                dict[window[0]].append(tuple(window[1:]))
+            window.pop(0)
+    return map
