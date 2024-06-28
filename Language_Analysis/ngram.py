@@ -18,9 +18,12 @@ def ngram_successor_map(sentence:str, n_gram:int)->dict:
     for word in words:
         window.append(word)
         if(len(window) >= n_gram):
-            if(window[0] not in map):
-                dict[window[0]] = [tuple(window[1:])]
+            kry = tuple(window[:-1])
+            if key not in map:
+                dict[key] = window[-1]
             else:
-                dict[window[0]].append(tuple(window[1:]))
+                dict[key].append(window[-1])
             window.pop(0)
     return map
+
+
